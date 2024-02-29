@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="106" id="KGk-i7-Jjw" customClass="PayNewMainTableViewCell" customModule="IndoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="543" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="543" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxs-bO-Fr2">
+                        <rect key="frame" x="2" y="6" width="539" height="94"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new711.png" translatesAutoresizingMaskIntoConstraints="NO" id="SW2-HT-orX">
+                        <rect key="frame" x="25" y="23" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="SW2-HT-orX" secondAttribute="height" multiplier="1:1" id="jKr-CK-udr"/>
+                            <constraint firstAttribute="width" constant="60" id="qzu-XB-jQ4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiQ-AJ-XX9">
+                        <rect key="frame" x="100" y="42.5" width="373" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newcellnext.png" translatesAutoresizingMaskIntoConstraints="NO" id="VQs-iI-pD6">
+                        <rect key="frame" x="488" y="35.5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="T8u-Mc-179"/>
+                            <constraint firstAttribute="width" constant="35" id="yVY-En-qfT"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TiQ-AJ-XX9" secondAttribute="trailing" constant="70" id="9gP-7Y-IHN"/>
+                    <constraint firstAttribute="trailing" secondItem="pxs-bO-Fr2" secondAttribute="trailing" constant="2" id="NSP-JM-yDA"/>
+                    <constraint firstItem="TiQ-AJ-XX9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Pve-gI-ied"/>
+                    <constraint firstItem="pxs-bO-Fr2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="YIO-Qm-G0t"/>
+                    <constraint firstAttribute="bottom" secondItem="pxs-bO-Fr2" secondAttribute="bottom" constant="6" id="bAH-f7-wqH"/>
+                    <constraint firstItem="TiQ-AJ-XX9" firstAttribute="leading" secondItem="SW2-HT-orX" secondAttribute="trailing" constant="15" id="c3J-Q7-er6"/>
+                    <constraint firstAttribute="trailing" secondItem="VQs-iI-pD6" secondAttribute="trailing" constant="20" id="cMI-nQ-A74"/>
+                    <constraint firstItem="SW2-HT-orX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hSa-fP-c6S"/>
+                    <constraint firstItem="SW2-HT-orX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="jq5-e2-Jci"/>
+                    <constraint firstItem="VQs-iI-pD6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qhv-22-Bcq"/>
+                    <constraint firstItem="pxs-bO-Fr2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="sU4-Al-qms"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backV" destination="pxs-bO-Fr2" id="w0f-SQ-avl"/>
+                <outlet property="logoImg" destination="SW2-HT-orX" id="RbE-ou-efs"/>
+                <outlet property="payTitleL" destination="TiQ-AJ-XX9" id="R8c-Cw-EgS"/>
+            </connections>
+            <point key="canvasLocation" x="302.17391304347831" y="102.45535714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="new711.png" width="181" height="179"/>
+        <image name="newcellnext.png" width="87" height="87"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
