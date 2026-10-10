@@ -1,6 +1,0 @@
-framework module Pods_indogo {
-  umbrella header "Pods-indogo-umbrella.h"
-
-  export *
-  module * { export * }
-}

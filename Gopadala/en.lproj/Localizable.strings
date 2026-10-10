@@ -1,0 +1,308 @@
+/* 
+  Localizable.strings
+  indogo
+
+  Created by mac on 2020/7/11.
+  Copyright © 2020 DIM. All rights reserved.
+*/
+"leading space" = ""; //用來分隔的神秘空白字元
+"leading sub space" = ""; //用來分隔的神秘空白字元(次)
+
+"remit" = "REMIT"; //匯款
+"shopping" = "SHOPPING"; //商城
+"agree" = "AGREE"; //同意/確認
+"cancel" = "Cancel"; //取消
+"cancelForError" = "OK"; //取消2
+"login" = "NEXT"; //登入
+"Login" = "Login";
+"recover passcode" = "Forget Password"; //密碼回復
+"register" = "REGISTRASI"; //註冊
+"remember passcode" = "Simpan Kata Sandi"; //記憶密碼
+"pic take" = "START"; //拍照
+"pic scan" = "MULAI/SCAN"; //拍照/掃描
+"pic scan 2" = "START"; //拍照/掃描
+
+"scan failed" = "Scan Failed"; //掃描失敗
+"or" = "or";
+"re scan" = "RE-SCAN"; //重新掃描
+"input arc number" = "Input ARC Number";
+"Incorrect ARC Number" = "Wrong ARC Number";
+"Please input Your ARC number correctly" = "Please entered your registered ARC number";
+
+"back" = ""; //返回(改成不顯示)
+"back Show" = "KEMBALI"; //返回
+"send" = "SUBMIT"; //送出
+"ok" = "NEXT"; //繼續
+"API DecodeFail" = "Server sedang sibuk, silakan coba lagi nanti"; //伺服器忙線中，請稍候再試
+"account" = "ARC Number"; //帳號
+"passcode" = "Password"; //密碼
+"scan again" = "RE-SCAN"; //再次掃描
+"scan format wrong" = "Format Salah"; //掃描格式錯誤
+"Please input Your ARC number" = "Please input Your ARC number"; //請輸入
+"API Timeout" = "Your Internet Connection is Unstable, Please Try Again.";
+"SMS Code Wrong" = "Kode SMS Salah, Silahkan Diulangi";
+"Please Update App" = "Perbaharui Sekarang Juga, Sebelum Melakukan Transaksi"; //強制更新
+
+"Arc Change Same Time" = "Please update all your information including selfie with ARC and signature";
+"Self Photo Change Same Time" = "Please update all your information including selfie with ARC and signature";
+"Photo Exceed Limit" = "Photo Anda Terlalu Besar, Silahkan Diulangi";
+
+"Agreement to Scan" = "Anda Harus Membuka Izin Akses Kamera Melalui Aplikasi Ini";
+"Agreement to Photo" = "Anda Harus Membuka Izin Akses Kamera Melalui Aplikasi Ini";
+
+"Register Error Empty" = "Please enter your data";
+"Register Error Tel" = "Please Enter Your Correct Mobile Number";
+"Register Error ARC" = "ARC Number Incorrect";
+"Register Error Pass" = "Password Must Be At Least 4 Digits";
+"Register Error Pass Not match" = "Password Does Not Match";
+"Register Member Exist" = "Your ARC Has Been Verified, Please Login";
+"Please Enter Number" = "Please Fill in the SMS Code";
+
+"Floating Title" = "Customer Service";
+"telephone" = "Phone";
+"line" = "Line";
+"messenger" = "Messenger";
+
+//忘記密碼
+"remember me" = "Remember me";
+"top for forgoet main" = "Please prepare your ARC";//忘記密碼首頁的說明
+"intro for forgoet main" = "Scan or input your\nARC here";
+"top for forgoet sec" = "How to scan\nyour ARC Barcode";
+"bottom for forgoet sec" = "Make sure the entire barcode are in the\nspecified box.";
+"bottom for forgoet sec ARC" = "Make sure the entire barcode are in the\nspecified box.";
+"bottom for forgoet sec Back" = "Make sure the entire barcode are in the\nspecified box.";
+"bottom for forgoet sec Selfie" = "Make sure your face is clearly visible\nclearly when taking a selfie";
+"bottom for forgoet sec Sign" = "Sign your name as\nit is shown on ARC";
+"top for forget arc scan" = "How to scan\nyour ARC Barcode";
+"top for forget result has phone" = "Your ARC Number is:";
+"TFFRHP Msg Title" = "Mohon Perhatian";
+"TFFRHP Msg Top" = "Make sure your phone number is active";
+"TFFRHP Msg End" = "A 4 digit SMS Code will be\nsent to your number\n\nYou have successfully changed\nyour password.\n\n";
+
+"TFFRHP Msg Register Title" = "Attention";
+"TFFRHP Msg Register Top" = "Nomor ARC Anda\nBelum Terdaftar\n\nSilahkan melakukan Registrasi";
+
+"TFFRHP Enter Title" = "Enter Verification Code";
+"TFFRHP Enter Top" = "We have sent the code to your number\n";
+"TFFRHP Enter Send Again" = "Resend Code";
+"TFFRHP Warning Title" = "No OTP received? Click here to contact GoPadala CS.";
+
+"TFFRHP Change Title" = "Enter your new password";
+"TFFRHP Change placehold2" = "Re-type Password";
+"TFFRHP Change warn" = "*Enter your password (at least 4 digits)";
+"TFFRHP Change warn2" = "*Re-type your password";
+
+//註冊
+"Main Register Alert Title" = "Izin Akses\nData Perangkat";
+"Main Register Alert Content" = "Demi meningkatkan layanan aplikasi, kami memperbaharui Kebijakan Privasi dan memerlukan izin Anda terhadap akses data perangkat";
+"Register Agreement Title" = "SYARAT DAN KETENTUAN";
+
+"Register Intro Top Title" = "Lengkapi Data Anda";
+"Register Intro Top" = "Anda hanya memerlukan waktu\nbeberapa menit";
+"Register Intro Bottom" = "Please prepare your ARC";
+
+"Register Input Foto" = "Foto Profil";
+"Register Input Name" = "Last Name, First Name Middle Name";
+"Register Input Phone" = "Mobile";
+"Register Input Pass" = "Password";
+"Register Input rePass" = "Repeat Password";
+"Register Input ARC Placehold" = "Saya mau isi kode poin dari teman";
+
+//註冊輸入分享碼and Scan
+"Register Share Input Title" = "Masukan Kode Poin";
+"Register Share Input Top" = "Silahkan scan barcode member ID\nteman Anda";
+"Register Share Input Scan" = "SCAN\nSEKARANG";
+"Register Share Input Msg" = "Anda dan teman Anda akan mendapatkan 200 bonus poin setelah selesai mengscan barcode member ID teman Anda";
+"Register Share Input Div" = "or";
+"Register Share Input Below" = "Masukan no. member ID teman Anda";
+
+"Register Share Scan Top" = "Cara mengscan barcode\nmember ID teman Anda";
+"Register Share Scan Bottom" = "Make sure the entire barcode is in the\nspecific box.";
+
+"Register Self Photo Confrim" = "Use";
+"Register Self Photo Retake" = "Re-take";
+
+"Register ID Photo First" = "ARC Front Photo";
+"Register ID Photo Sec" = "ARC Back Photo";
+
+"Register ID Photo Intro" = "START";
+
+"Register ID Photo Title Front" = "How to Take Your ARC Front Photo";
+"Register ID Photo Title Back" = "How to Take Your ARC Back Photo";
+
+"Register ID Self First" = "Selfie";
+"Register ID Self First2" = "SELFIE  WITH  ARC";
+"Register ID Self Sec" = "Foto KTP / Paspor";
+"Register ID Self Sign" = "Signature";
+"Register ID Photo Title Passport" = "Cara Memfoto KTP";
+
+"Register ID Face And ID Intro" = "How to take a Selfie";
+
+"Register ID Make Signature Top" = "Sign your name as it is shown on ARC";
+"Register Signature Required" = "Please provide your signature.";
+
+"Register Input Foto Select Title" = "Pilih Foto";
+"Register Input Foto Select Camera" = "Ambil Foto Dari Kamera";
+"Register Input Foto Select Gallery" = "Pilih Dari Galeri";
+
+"Profile Main Title" = "Your profile";
+"Profile Main ChangePhone" = "Change cellphone number";
+"Profile Main Point" = "Your point";
+"Profile Main Reciter" = "List of Recipients";
+"Profile Main Transaction" = "Transaction History";
+"Profile Main Call" = "Customer Service";
+"Profile Main About" = "About us";
+"Profile Main Invoice" = "Uniform Invoice / Bonus";
+"Profile Main Invoiceb" = "Ticket";
+"Profile Main Terms" = "Terms and Conditions";
+"Profile Main Faq" = "FAQ";
+"Profile Main Logout" = "Log out";
+
+"Notice Main Title" = "Notification";
+
+"Notice Type 0" = "Bonus points";
+"Notice Type 1" = "TRANSAKSI GAGAL";
+"Notice Type 2" = "";
+"Notice Type 3" = "UPDATE DATA";
+
+"History Point Cell 1" = "Date";
+"History Point Cell 2" = "Type";
+"History Point Cell 3" = "Amount";
+"History Point Cell 4" = "Remaining Points";
+
+"Point Transfer Title" = "TRANSFER POIN";
+"Point Transfer Input Title" = "Transfer Kepada";
+"Point Transfer Input Phone Place Holder" = "Masukan No. HP Penerima";
+"Point Transfer Input Point Place Holder" = "Total Poin yang Ditransfer";
+"Point Transfer Alert Title" = "GAGAL";
+
+"Point Transfer Alert No Member Title" = "Attention";
+"Point Transfer Alert No Member Content" = "nomor yang Anda masukkan\ntidak terdaftar\n\nSilahkan periksa kembali";
+
+"Point Transfer Alert Point Lack Title" = "Attention";
+"Point Transfer Alert Point Lack Content" = "Jumlah poin yang Anda masukkan melebihi jumlah poin saat ini";
+
+"Point Transfer Step2 Title" = "Transfer Kepada";
+"Point Transfer Step2 Successed Title" = "BERHASIL";
+"Point Transfer Step2 Successed SubTitle" = "Terima Kasih";
+"Point Transfer Step2 Successed Content A" = "Anda telah berhasil\nmengirimkan ";
+"Point Transfer Step2 Successed Content B" = " Poin";
+"Point Transfer Add Recipient Next" = "TAMBAHKAN";
+"Point Transfer Add Recipient Code PlaceHolder" = "Pilih Nama Bank";
+"Point Transfer Add Recipient Accounnt PlaceHolder" = "Nomor Rekening";
+
+"Member Use Agreement Title" = "Syarat & Ketentuan";
+
+"Transfer State 1" = "PENDING";
+"Transfer State 2" = "PAID";
+"Transfer State 3" = "PROCESS";
+"Transfer State 4" = "TRANSFERRED";
+"Transfer State 5" = "FAILED";
+
+"Transfer State Pure Text Title" = "Please make the payment";
+"Transfer State Mid Text Title" = "Destination Account:";
+"Transfer State Plot Text L1" = "Pending";
+"Transfer State Plot Text L2" = "Paid";
+"Transfer State Plot Text L3" = "Process";
+"Transfer State Plot Text L4" = "Transferred";
+"Transfer State Down Time Title" = "Paid Time";
+"Transfer State Down Kurs Value Title" = "Reference Rate";
+
+"Transfer Main Box Up Title" = "Transfer Amount";
+"Transfer Main Box Down Title" = "Exchange Rates";
+"Transfer Main Charge Title" = "Charge Fee";
+"Transfer Main Use Point Title" = "Discount";
+"Transfer Main Total Money" = "Total NTD";
+"Transfer Main Total Point Title" = "Redeem Points";
+
+"Transfer Confirm Title" = "Marco Alonso Reyes";
+"Transfer Confirm TWD Title" = "SEND";
+"Transfer Confirm Fee Title" = "FEE";
+"Transfer Confirm UsePoint Title" = "Exchange Points";
+"Transfer Confirm Total Title" = "Total";
+
+"Transfer Agreement Title" = "Pernyataan";
+
+"Transfer Result Exceed" = "Total payment can not ecxeed NTD";
+
+"Transfer Result Title" = "YOUR PIN CODE";
+"Transfer Result Bar Title" = "BELUM DIBAYARKAN";
+"Transfer Result Store Title" = "Silahkan pilih mini market";
+"Transfer Result Go Map Title" = "Cari Mini Market Terdekat";
+"Transfer Result Pay Title" = "LANGSUNG KE KASIR";
+
+"Transfer PayStep Title" = "Your Pin Code";
+"Transfer PayStep Up Intro" = "Show your barcode\n to the cashier";
+"Transfer PayStep Intro" = "Please Select Payment Methods";
+"Transfer PayStep Min Title" = "Minutes";
+"Transfer PayStep Sec Title" = "Seconds";
+"Transfer PayStep Warn" = "This barcode is valid for\n10 minutes only.\nTo generate a new one,\nclick CREATE NEW BARCODE.";
+"Transfer PayStep Btn Enlarge" = "Show Barcode";
+"Transfer PayStep Btn Reload" = "CREATE NEW BARCODE";
+
+"Transfer Expired Step Warn1" = "Please make the payment";
+"Transfer Expired Step Warn2" = "Your barcode has expired. To proceed\nwith payment, click the button below.";
+"Transfer Expired Step Warn Title" = "Attention";
+"Transfer Expired Step Btn Title" = "CREATE NEW BARCODE";
+
+"Coming Soon" = "Segera Hadir";
+
+"Transfer New Main 711" = "Seven Eleven";
+"Transfer New Main family" = "Family Mart";
+"Transfer New Main ok" = "OK Mart";
+"Transfer New Main hilife" = "Hi-Life";
+"Transfer New Main bank" = "Transfer to Bank Account";//"Transfer ke Rekening Bank";
+
+"Transfer New bank code" = "BANK CODE (銀行代碼)";
+"Transfer New bank acc" = "ACCOUNT NUMBER (帳號)";
+"Transfer New bank total" = "Total (總金額)";
+"Transfer New bank expire" = "Payment deadline：";
+"Transfer New bank expire 2" = "Nag-expire na po ang payment period. Gumawa ng bagong transaction para makakuha ng bagong payment account.";
+"Transfer New bank expire 3" = "THIS PIN CODE IS VALID UNTIL";
+"Transfer New bank expire year" = "Tanggal";
+"Transfer New bank expire time" = "Paid Time";
+"Transfer New bank copy success" = "Sukses";
+
+"Change Data Intro Title" = "Verify your mobile number";
+"Change Data Intro Line1" = "Make sure your mobile number is";
+"Change Data Intro Line2" = "We will send an SMS code\nto this number";
+"Change Data Intro Btn Title" = "Change Mobile number";
+
+"Change Phone Bar Title" = "Change phone number";
+"Change Phone Title" = "Old phone number";
+"Change Phone Title2" = "New phone number";
+"Change Phone Warn" = "*Nomor HP Salah";
+
+"Register AddDate Title" = "Birthday";
+"Register AddDate Title2" = "ARC EXPIRATION DATE";
+"Register AddDate Title3" = "Invitation Code (Optional)";
+"Purpose placeholder" = "Pilih Hubungan";
+"Purpose Select default word" = "";
+"Purpose Select Title" = "Purpose of Remittance";
+
+"Transfer State Left Btn" = "Process";
+"Transfer State Right Btn" = "Transferred";
+"New Login Hint" = "Log in or register using ARC";
+"New Login Account PlaceHolder" = "Input ARC Number";
+"New Login Pass PlaceHolder" = "Input Password";
+"New RegisterMain Warning" = "Scan or input your ARC here";
+"New RegisterMain Top" = "Please prepare your ARC";
+
+"debate title" = "Financial Solution";
+"ereciept" = "Uniform Invoice / Bonus";
+"erecieptb" = "Ticket";
+"Get point intro title" = "Make sure your mobile number is active";
+"Get point intro warning" = "A 4 digit SMS Code will be\nsent to your number";
+
+"Enter your password" = "Enter your password";
+
+"Pre TransferAccount Head" = "PROMO CODE";
+"Pre TransferAccount Title" = "Enter Promo Code";
+"Pre TransferAccount Wrong" = "Incorrect/Unavailable Promo Code";
+"Pre TransferAccount Bottom Title" = "Available / Unused Discount Codes";
+"Pre TransferAccount Bottom Amount" = "FREE CHARGE FEE";
+"Pre TransferAccount Bottom Time" = "Valid until ";
+"Pre TransferAccount Bottom Available" = "CLAIM";
+"Pre TransferAccount Bottom Used" = "USED";
+"Pre TransferAccount Bottom Expired" = "EXPIRED";
+"Transfer Main Top Box Title" = "Remaining Monthly Limit";

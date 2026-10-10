@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "049686D824B6EFB0005EF74A"
-               BuildableName = "IndoGo.app"
+               BuildableName = "GoPadala.app"
                BlueprintName = "Gopadala"
                ReferencedContainer = "container:Gopadala.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "049686D824B6EFB0005EF74A"
-            BuildableName = "IndoGo.app"
+            BuildableName = "GoPadala.app"
             BlueprintName = "Gopadala"
             ReferencedContainer = "container:Gopadala.xcodeproj">
          </BuildableReference>
@@ -68,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "049686D824B6EFB0005EF74A"
-            BuildableName = "IndoGo.app"
+            BuildableName = "GoPadala.app"
             BlueprintName = "Gopadala"
             ReferencedContainer = "container:Gopadala.xcodeproj">
          </BuildableReference>

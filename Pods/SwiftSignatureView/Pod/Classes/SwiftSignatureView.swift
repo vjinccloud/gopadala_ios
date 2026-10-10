@@ -9,15 +9,17 @@
 import UIKit
 import PencilKit
 
-public protocol ISignatureView: class {
+public protocol ISignatureView: AnyObject {
     var delegate: SwiftSignatureViewDelegate? { get set }
     var scale: CGFloat { get set }
     var maximumStrokeWidth: CGFloat { get set }
     var minimumStrokeWidth: CGFloat { get set }
+    var bgColor: UIColor { get set }
     var strokeColor: UIColor { get set }
     var strokeAlpha: CGFloat { get set }
     var signature: UIImage? { get set }
     var isEmpty: Bool { get }
+    var drawingGestureRecognizer: UIGestureRecognizer? { get }
 
     func clear(cache: Bool)
     func undo()
@@ -85,7 +87,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
             instance.maximumStrokeWidth = newValue
         }
     }
-
+    
     /**
     The stroke color.
     */
@@ -98,6 +100,20 @@ open class SwiftSignatureView: UIView, ISignatureView {
             instance.strokeColor = newValue
         }
     }
+    
+    /**
+     The background color.
+     */
+    @IBInspectable public var bgColor: UIColor {
+        get {
+            instance.bgColor
+        }
+        
+        set {
+            instance.bgColor = newValue
+        }
+    }
+
 
     /**
     The stroke alpha. Prefer higher values to prevent stroke segments from showing through.
@@ -131,6 +147,11 @@ open class SwiftSignatureView: UIView, ISignatureView {
         }
     }
 
+    /// The gesture recognizer that the canvas uses to track touch events.
+    open var drawingGestureRecognizer: UIGestureRecognizer? {
+        return instance.drawingGestureRecognizer
+    }
+    
     /**
     Clear the signature.
     */

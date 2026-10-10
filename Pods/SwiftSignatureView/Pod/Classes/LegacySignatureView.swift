@@ -14,6 +14,9 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     open weak var delegate: SwiftSignatureViewDelegate?
 
     open var scale: CGFloat = 10.0
+    
+    /// The gesture recognizer that the canvas uses to track touch events.
+    private(set) open var drawingGestureRecognizer: UIGestureRecognizer?
 
     /**
     The maximum stroke width.
@@ -40,7 +43,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     /**
     The stroke color.
     */
-    open var strokeColor: UIColor = UIColor.black
+    open var strokeColor: UIColor = .black
 
     /**
     The stroke alpha. Prefer higher values to prevent stroke segments from showing through.
@@ -50,6 +53,15 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
             if strokeAlpha <= 0.0 || strokeAlpha > 1.0 {
                 strokeAlpha = oldValue
             }
+        }
+    }
+    
+    /**
+     The background color
+     */
+    open var bgColor: UIColor = .clear {
+        didSet {
+            backgroundColor = bgColor
         }
     }
 
@@ -169,6 +181,8 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
         pan.maximumNumberOfTouches = 1
         pan.delegate = self
         self.addGestureRecognizer(pan)
+        
+        self.drawingGestureRecognizer = pan
     }
 
     @objc func tap(_ tap: UITapGestureRecognizer) {
