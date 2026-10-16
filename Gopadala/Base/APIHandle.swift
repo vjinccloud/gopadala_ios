@@ -219,6 +219,9 @@ class APIHandle {
         case API_GetPurpose:
             checkPurpose(DataStr: resultStr)
             break
+        case API_FraudMessage:
+            checkFraudMessage(DataStr: resultStr)
+            break
         case API_CashPickupOptionList:
             checkCashOption(DataStr: resultStr)
             break
@@ -448,6 +451,11 @@ class APIHandle {
                 AppDelegate.shared().sSSContributionObj.append(obj)
             }
         }
+    }
+    
+    //防詐提醒：回傳整段文字，可能含換行，整段保留
+    private func checkFraudMessage(DataStr dataStr:String) {
+        AppDelegate.shared().fraudMessageStr = dataStr.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     private func checkPurpose(DataStr dataStr:String) {

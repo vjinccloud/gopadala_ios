@@ -101,6 +101,8 @@ let API_PhoneTokenSet = ServerURL + "/app/remit/phone_token_set"
 
 let API_GetBankCode = ServerURL + "/console/api/getVAccount"
 let API_GetPurpose = ServerURL + "/app/remit/transfer_purpose"
+//防詐提醒（compliance-202610）。路徑沒有 .php（簡報寫錯，以 Android 實測為準）
+let API_FraudMessage = ServerURL + "/app/remit/fraud_message"
 let API_GetRelation = ServerURL + "/app/remit/relationship"
 let API_SendUpdatePhoneSMS = ServerURL + "/app/remit/update_phone_sms"
 let API_VerifyUpdatePhoneSMS = ServerURL + "/app/remit/update_phone"

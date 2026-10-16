@@ -16,6 +16,8 @@ protocol CustomAlertDelegate {
 class CustomAlertView: UIView {
     
     var customDelegate:CustomAlertDelegate?
+    /// false 時點視窗外面（以及共用 cancelAction 的按鈕）不會關閉，用於必須按確認的提醒
+    var tapOutsideToClose = true
 
     public func initSimpleAlert(Title title:String, Content content:String, NextBtn1Str btnStr1:String) {
         self.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)
@@ -431,6 +433,9 @@ class CustomAlertView: UIView {
     
     
     @objc func cancelAction() {
+        if !tapOutsideToClose {
+            return
+        }
         self.removeFromSuperview()
     }
     

@@ -313,3 +313,6 @@
 "Register Error ARC Issue Future" = "ARC issue date cannot be later than today";
 "Register Error ARC Issue After Expire" = "ARC issue date cannot be later than the expiration date";
 
+/* compliance-202610 需求2：防詐提醒 */
+"Fraud Alert Title" = "Security Alert";
+"Fraud Alert Confirm" = "I Understand";
