@@ -22,6 +22,7 @@ class RegisterDataObj: NSObject {
     var signImg:UIImage!
     var birthday:String = ""
     var arcDay:String = ""
+    var arcIssueDay:String = ""   //ARC 發證日期 yyyy-MM-dd
     var invitationCode:String = ""
     var invitationMemberID:String = ""
 }

@@ -4505,6 +4505,72 @@ Anda dibawah ini :</string>
                                                     <constraint firstItem="vX3-ts-kct" firstAttribute="centerY" secondItem="aGp-K9-AEb" secondAttribute="centerY" id="yvY-on-10m"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-26-HYy" userLabel="Date3IntroView">
+                                                <rect key="frame" x="0.0" y="522" width="320" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ees-tA-uPE">
+                                                        <rect key="frame" x="60" y="11" width="37.5" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="2Fl-A0-wA7"/>
+                                                    <constraint firstItem="ees-tA-uPE" firstAttribute="centerY" secondItem="lIq-26-HYy" secondAttribute="centerY" id="GrQ-Z3-iac"/>
+                                                    <constraint firstItem="ees-tA-uPE" firstAttribute="leading" secondItem="lIq-26-HYy" secondAttribute="leading" constant="60" id="8Oc-98-Uli"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-Fo-fce" userLabel="Date3View">
+                                                <rect key="frame" x="0.0" y="562" width="320" height="62"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFa-GZ-q3r">
+                                                        <rect key="frame" x="50" y="9" width="220" height="44"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="zGm-zS-Hze">
+                                                        <rect key="frame" x="229" y="18" width="26" height="26"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="26" id="9su-9S-jzO"/>
+                                                            <constraint firstAttribute="height" constant="26" id="KSc-Xi-o3T"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-A9-XgE">
+                                                        <rect key="frame" x="50" y="9" width="220" height="44"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="hyu-3o-dQB"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="date3Action:" destination="3BU-fQ-kv9" eventType="touchUpInside" id="CVp-1A-8rL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4T-2u-pKk">
+                                                        <rect key="frame" x="65" y="20" width="160" height="22"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="f4T-2u-pKk" firstAttribute="leading" secondItem="Pqu-A9-XgE" secondAttribute="leading" constant="15" id="Tup-NY-ulk"/>
+                                                    <constraint firstItem="HFa-GZ-q3r" firstAttribute="width" secondItem="Pqu-A9-XgE" secondAttribute="width" id="3rj-qy-Ugn"/>
+                                                    <constraint firstItem="zGm-zS-Hze" firstAttribute="trailing" secondItem="Pqu-A9-XgE" secondAttribute="trailing" constant="-15" id="Ntf-uK-mLc"/>
+                                                    <constraint firstItem="Pqu-A9-XgE" firstAttribute="centerY" secondItem="jV8-Fo-fce" secondAttribute="centerY" id="Pip-Bm-9QA"/>
+                                                    <constraint firstItem="HFa-GZ-q3r" firstAttribute="centerY" secondItem="Pqu-A9-XgE" secondAttribute="centerY" id="VXb-64-XNI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Pqu-A9-XgE" secondAttribute="trailing" constant="50" id="23R-uD-tdJ"/>
+                                                    <constraint firstItem="HFa-GZ-q3r" firstAttribute="height" secondItem="Pqu-A9-XgE" secondAttribute="height" id="J42-CC-osE"/>
+                                                    <constraint firstItem="HFa-GZ-q3r" firstAttribute="centerX" secondItem="Pqu-A9-XgE" secondAttribute="centerX" id="h4w-h0-XAG"/>
+                                                    <constraint firstItem="f4T-2u-pKk" firstAttribute="centerY" secondItem="zGm-zS-Hze" secondAttribute="centerY" id="6yY-J8-gLC"/>
+                                                    <constraint firstItem="Pqu-A9-XgE" firstAttribute="leading" secondItem="jV8-Fo-fce" secondAttribute="leading" constant="50" id="2f7-iM-fPB"/>
+                                                    <constraint firstItem="f4T-2u-pKk" firstAttribute="trailing" secondItem="Pqu-A9-XgE" secondAttribute="trailing" constant="-45" id="vem-WO-jGU"/>
+                                                    <constraint firstItem="zGm-zS-Hze" firstAttribute="centerY" secondItem="Pqu-A9-XgE" secondAttribute="centerY" id="2Xa-Vi-BUG"/>
+                                                    <constraint firstAttribute="height" constant="62" id="NRR-9u-nLy"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uo1-cF-tAb" userLabel="Date2IntroView">
                                                 <rect key="frame" x="0.0" y="522" width="320" height="40"/>
                                                 <subviews>
@@ -4710,6 +4776,10 @@ Anda dibawah ini :</string>
                         <outlet property="date2IntroL" destination="KUt-ks-mMf" id="Pn2-JR-vVA"/>
                         <outlet property="date2Textfield" destination="Het-Nb-JAi" id="FBc-Fo-ZPi"/>
                         <outlet property="date2V" destination="PuN-fS-0aI" id="YbI-0p-HP1"/>
+                        <outlet property="date3Btn" destination="Pqu-A9-XgE" id="1fN-X5-FkI"/>
+                        <outlet property="date3IntroL" destination="ees-tA-uPE" id="bKI-zP-sEZ"/>
+                        <outlet property="date3Textfield" destination="f4T-2u-pKk" id="QX8-zT-N2w"/>
+                        <outlet property="date3V" destination="HFa-GZ-q3r" id="XCD-ZG-NCJ"/>
                         <outlet property="errorL" destination="EG4-bJ-ChS" id="4sL-nr-Z1O"/>
                         <outlet property="errorView" destination="ZUC-6c-bdH" id="jnX-t5-1hW"/>
                         <outlet property="invitationBtn" destination="JDg-IL-dUE" id="4pa-7p-Iv0"/>
