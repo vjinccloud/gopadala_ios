@@ -5,7 +5,7 @@
 
 ## 目前任務
 
-需求代號 `compliance-202610`，規格：`../docs/spec/三國合規更新.md`。GoPadala 要做需求 1（ARC 發證日期）與需求 2（防詐提醒）。需求 3 GoPadala 已有，不用動。
+需求代號 `compliance-202610`，規格：`../docs/spec/三國合規更新.md`。GoPadala 要做需求 1（ARC 發證日期）與需求 2（防詐提醒）。需求 3 GoPadala 已有，只做規格第 3 節的「既有實作檢查」。
 
 分支 `feature/compliance-202610` 已開好，直接在上面 commit。不 push、不合 main。**commit 訊息用中文，不可出現 Claude、AI、Co-Authored-By 等署名。**
 
