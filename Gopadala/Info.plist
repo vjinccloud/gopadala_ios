@@ -4,86 +4,104 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
 	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconName</key>
-			<string>AppIcon</string>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>AppIcon</string>
-			</array>
-		</dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
 			<key>Anniversary</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
-				<array><string>Anniversary</string></array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Double10</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array><string>Double10</string></array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Halloween</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array><string>Halloween</string></array>
+				<array>
+					<string>Anniversary</string>
+				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
 			<key>ChristmasHolidays</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
-				<array><string>ChristmasHolidays</string></array>
+				<array>
+					<string>ChristmasHolidays</string>
+				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
-			<key>LunarNewYear</key>
+			<key>Double10</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
-				<array><string>LunarNewYear</string></array>
+				<array>
+					<string>Double10</string>
+				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
-			<key>HolyWeek</key>
+			<key>Halloween</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
-				<array><string>HolyWeek</string></array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>MothersDay</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array><string>MothersDay</string></array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>IndependenceDay</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array><string>IndependenceDay</string></array>
+				<array>
+					<string>Halloween</string>
+				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
 			<key>HeroesDay</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
-				<array><string>HeroesDay</string></array>
+				<array>
+					<string>HeroesDay</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>HolyWeek</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>HolyWeek</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>IndependenceDay</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>IndependenceDay</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>LunarNewYear</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>LunarNewYear</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>MothersDay</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>MothersDay</string>
+				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
 		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>AppIcon</string>
+			</array>
+			<key>CFBundleIconName</key>
+			<string>AppIcon</string>
+		</dict>
 	</dict>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -105,6 +123,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
