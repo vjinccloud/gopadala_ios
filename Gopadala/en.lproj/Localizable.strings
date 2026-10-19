@@ -306,3 +306,13 @@
 "Pre TransferAccount Bottom Used" = "USED";
 "Pre TransferAccount Bottom Expired" = "EXPIRED";
 "Transfer Main Top Box Title" = "Remaining Monthly Limit";
+
+/* compliance-202610 需求1：ARC 發證日期 */
+"ARC ISSUE DATE" = "ARC Issue Date";
+"Register Error ARC Issue Empty" = "Please select your ARC issue date";
+"Register Error ARC Issue Future" = "ARC issue date cannot be later than today";
+"Register Error ARC Issue After Expire" = "ARC issue date cannot be later than the expiration date";
+
+/* compliance-202610 需求2：防詐提醒 */
+"Fraud Alert Title" = "Security Alert";
+"Fraud Alert Confirm" = "I Understand";

@@ -167,6 +167,35 @@ class RegisterPurpleMain: UIViewController, UITextFieldDelegate, CustomAlertDele
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.view.center = oldCenter
     }
+    
+    //手動輸入 ARC：限 10 碼、只收英數字、小寫自動轉大寫
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard textField == accountTextfield, let current = textField.text, let textRange = Range(range, in: current) else {
+            return true
+        }
+        
+        let upper = string.uppercased()
+        let allowed = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+        if upper.unicodeScalars.contains(where: { !allowed.contains($0) }) {
+            return false
+        }
+        
+        let newText = current.replacingCharacters(in: textRange, with: upper)
+        if newText.count > 10 {
+            return false
+        }
+        
+        if upper == string {
+            return true
+        }
+        
+        //有小寫：自己換成大寫後寫回，並把游標放回輸入點後面
+        textField.text = newText
+        if let pos = textField.position(from: textField.beginningOfDocument, offset: range.location + upper.count) {
+            textField.selectedTextRange = textField.textRange(from: pos, to: pos)
+        }
+        return false
+    }
 
     /*
     // MARK: - Navigation

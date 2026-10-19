@@ -711,6 +711,7 @@
 		04D73A272574CA56005E6D5D /* ARCInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D73A252574CA56005E6D5D /* ARCInputVC.swift */; };
 		04D8562A24C22088007BD825 /* ForgotPassChangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8562924C22088007BD825 /* ForgotPassChangeVC.swift */; };
 		04D8562C24C2D14C007BD825 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8562B24C2D14C007BD825 /* CustomAlertView.swift */; };
+		DE8CCC236DE3FFB89F75FFC9 /* FraudMessageGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957298102CC367435DA189D /* FraudMessageGate.swift */; };
 		04D8562E24C2DB5C007BD825 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D8562D24C2DB5C007BD825 /* Register.storyboard */; };
 		04D9834D24F95D44007D1269 /* RecipientListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9834C24F95D44007D1269 /* RecipientListVC.swift */; };
 		04D9834F24F96181007D1269 /* RecipientObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9834E24F96181007D1269 /* RecipientObj.swift */; };
@@ -1442,6 +1443,7 @@
 		04D73A252574CA56005E6D5D /* ARCInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCInputVC.swift; sourceTree = "<group>"; };
 		04D8562924C22088007BD825 /* ForgotPassChangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassChangeVC.swift; sourceTree = "<group>"; };
 		04D8562B24C2D14C007BD825 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		4957298102CC367435DA189D /* FraudMessageGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraudMessageGate.swift; sourceTree = "<group>"; };
 		04D8562D24C2DB5C007BD825 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		04D9834C24F95D44007D1269 /* RecipientListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientListVC.swift; sourceTree = "<group>"; };
 		04D9834E24F96181007D1269 /* RecipientObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientObj.swift; sourceTree = "<group>"; };
@@ -2237,6 +2239,7 @@
 				0496881524B8D693005EF74A /* UtilityTool.swift */,
 				0496881B24BC3E81005EF74A /* FloatingButtonController.swift */,
 				04D8562B24C2D14C007BD825 /* CustomAlertView.swift */,
+				4957298102CC367435DA189D /* FraudMessageGate.swift */,
 				04F6FF1624D1BFDB00887E80 /* UILabel+Extention.swift */,
 				04C8CBED24D5635D00AE90F6 /* UIImage+Extension.swift */,
 				04D9D78824E28AFF0036DC5C /* PureWebVC.swift */,
@@ -3219,6 +3222,7 @@
 				018FADB12B9AFB00009E2928 /* AddRecipientNewObj.swift in Sources */,
 				016E95B429EC59B300607D21 /* ShareGetPointIntroVC.swift in Sources */,
 				04D8562C24C2D14C007BD825 /* CustomAlertView.swift in Sources */,
+				DE8CCC236DE3FFB89F75FFC9 /* FraudMessageGate.swift in Sources */,
 				0496881124B8D61E005EF74A /* UIView+constraints.swift in Sources */,
 				0496880F24B8D61E005EF74A /* AppDefine.swift in Sources */,
 				01CD4B6628FD8CC3001A263D /* CompanyV.swift in Sources */,

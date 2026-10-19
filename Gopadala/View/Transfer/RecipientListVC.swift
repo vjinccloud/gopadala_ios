@@ -249,7 +249,15 @@ class RecipientListVC: UIViewController, UITextFieldDelegate, UITableViewDelegat
         }
     }
     
+    //新增收款人一律先過防詐提醒（compliance-202610 需求2）
+    //右上加號、Add Recipient 按鈕、清單為空時自動開新增頁，三條路都走這裡
     func goAddRecipient() {
+        FraudMessageGate.shared.check { [weak self] in
+            self?.pushAddRecipient()
+        }
+    }
+    
+    func pushAddRecipient() {
         //AddRecipientVC
         let nextVC = UIStoryboard(name: "Member", bundle: nil).instantiateViewController(withIdentifier: "AddRecipientNewVC") as? AddRecipientNewVC
         nextVC!.canSelectForTransfer = canSelectForTransfer

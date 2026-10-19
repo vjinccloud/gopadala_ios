@@ -63,6 +63,14 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var date1V: UIView!
     @IBOutlet weak var date2V: UIView!
     
+    //ARC 發證日期（compliance-202610）
+    @IBOutlet weak var date3IntroL: UILabel!
+    @IBOutlet weak var date3Textfield: UITextField!
+    @IBOutlet weak var date3Btn: UIButton!
+    @IBOutlet weak var date3V: UIView!
+    var dateIssue:Date?
+    var issueDatePicker:UIDatePicker!
+    
     var presetArc = ""
     var hasSharedCode = false
     var loadOnce = false
@@ -128,6 +136,27 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
                 datePicker.preferredDatePickerStyle = .wheels
             }
         }
+        
+        if date3Textfield != nil {
+            date3Textfield.tag = 2
+            let datePicker = UIDatePicker.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 200))
+            datePicker.datePickerMode = .date
+            datePicker.date = dateNow
+            //範圍：最晚今天、最早往前 10 年（10 年為暫定值，與 Android 一致）
+            datePicker.minimumDate = dateNow.addDays(Days: 0, Month: 0, Year: -10)
+            datePicker.maximumDate = dateNow
+            
+            date3Textfield.inputView = datePicker
+            let doneButton = UIBarButtonItem.init(title: NSLocalizedString("ok", comment: ""), style: .done, target: self, action: #selector(self.datePickerIssueDone))
+            let toolBar = UIToolbar.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 44))
+            toolBar.setItems([UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil), doneButton], animated: true)
+            date3Textfield.inputAccessoryView = toolBar
+            issueDatePicker = datePicker
+            issueDatePicker.tag = 2
+            if #available(iOS 14, *) {
+                datePicker.preferredDatePickerStyle = .wheels
+            }
+        }
     }
     
     @objc func datePickerStartDone() {
@@ -138,10 +167,17 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func datePickerEndDone() {
-        date2Textfield.resignFirstResponder()
         let date = endDatePicker.date
         dateEnd = date
         date2Textfield.text = date.toString()
+        date2Textfield.resignFirstResponder()
+    }
+    
+    @objc func datePickerIssueDone() {
+        let date = issueDatePicker.date
+        dateIssue = date
+        date3Textfield.text = date.toString()
+        date3Textfield.resignFirstResponder()
     }
     
     //MARK: - View-Life
@@ -164,11 +200,14 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
         date2V.layer.cornerRadius = date2V.frame.size.height/2
         date1Btn.layer.cornerRadius = date1Btn.frame.size.height/2
         date2Btn.layer.cornerRadius = date2Btn.frame.size.height/2
+        date3V.layer.cornerRadius = date3V.frame.size.height/2
+        date3Btn.layer.cornerRadius = date3Btn.frame.size.height/2
         invitationBtn.layer.cornerRadius = invitationBtn.frame.size.height/2
         
         titelL.text = NSLocalizedString("account", comment: "")
         date1IntroL.text = NSLocalizedString("Register AddDate Title", comment: "")
         date2IntroL.text = NSLocalizedString("Register AddDate Title2", comment: "")
+        date3IntroL.text = NSLocalizedString("ARC ISSUE DATE", comment: "")
         invitationTitleL.text = NSLocalizedString("Register AddDate Title3", comment: "")
         
         passTextField.placeholder = NSLocalizedString("passcode", comment: "")
@@ -191,9 +230,11 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
         rePassTextField.delegate = self
         date1Textfield.delegate = self
         date2Textfield.delegate = self
+        date3Textfield.delegate = self
 
         date1Textfield.tintColor = .clear
         date2Textfield.tintColor = .clear
+        date3Textfield.tintColor = .clear
         
         invitationField.placeholder = ""
         //accountTextfield.placeholder = NSLocalizedString("Register Input Name", comment: "")
@@ -241,6 +282,9 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
         addDatePicker()
         date1Textfield.text = dateStart.toString()
         date2Textfield.text = dateEnd.toString()
+        //發證日期必填，不預填，讓使用者自己選
+        date3Textfield.text = ""
+        date3Textfield.attributedPlaceholder = NSAttributedString(string: "YYYY-MM-DD", attributes: attributes)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -262,7 +306,7 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == date1Textfield || textField == date2Textfield {
+        if textField == date1Textfield || textField == date2Textfield || textField == date3Textfield {
             return false
         }
         
@@ -309,6 +353,7 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
             multipartFormData.append(UtilityTool().sha256(Code: obj.passwaord!).data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "password")
             multipartFormData.append(self.invitationField.text!.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "share_member_id")
             multipartFormData.append(obj.arcDay.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "arc_expire_date")
+            multipartFormData.append(obj.arcIssueDay.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "arc_issue_date")
             multipartFormData.append(obj.birthday.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "birthday")
             
         }, usingThreshold: UInt64.init(), to: todoEndpoint, method: .post, headers: headers) { (result) in
@@ -407,12 +452,18 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
         
         AppDelegate.shared().tempRegisterObj.birthday = date1Textfield.text!
         AppDelegate.shared().tempRegisterObj.arcDay = date2Textfield.text!
+        AppDelegate.shared().tempRegisterObj.arcIssueDay = date3Textfield.text!
         
         registerStep1()
     }
     
     //MARK: - Button-Action
     @IBAction func nextAction(_ sender: Any) {
+        //ARC 發證日期前端檢查，不靠後端
+        if !checkArcIssueDate() {
+            return
+        }
+        
         if invitationField.text != "" {
             checkInvitation()
         } else {
@@ -569,6 +620,10 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
             return false
         }
         
+        if !checkArcIssueDate() {
+            return false
+        }
+        
         errorView.isHidden = true
         return true
     }
@@ -577,6 +632,9 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
         var pass = true
         
         if accountTextfield.text?.count == 0 || phoneTextfield.text?.count == 0 || passTextField.text?.count == 0 || rePassTextField.text?.count == 0 || arcCodeL.text?.count == 0 {
+            pass = false
+        } else if (date3Textfield.text ?? "").isEmpty {
+            //ARC 發證日期必填，沒選不能按下一步
             pass = false
         } else if passTextField.text != rePassTextField.text {
             pass = false
@@ -606,6 +664,36 @@ class RegisterPurpleInputVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func date2Action(_ sender: Any) {
         date2Textfield.becomeFirstResponder()
+    }
+    
+    @IBAction func date3Action(_ sender: Any) {
+        date3Textfield.becomeFirstResponder()
+    }
+    
+    /// ARC 發證日期：必填、不可晚於今天、不可晚於到期日。不通過時顯示 errorView 並回傳 false
+    func checkArcIssueDate() -> Bool {
+        guard let issue = dateIssue, date3Textfield.text?.count ?? 0 > 0 else {
+            errorL.text = NSLocalizedString("Register Error ARC Issue Empty", comment: "")
+            errorView.isHidden = false
+            return false
+        }
+        
+        let calendar = Calendar.current
+        let issueDay = calendar.startOfDay(for: issue)
+        
+        if issueDay > calendar.startOfDay(for: Date()) {
+            errorL.text = NSLocalizedString("Register Error ARC Issue Future", comment: "")
+            errorView.isHidden = false
+            return false
+        }
+        
+        if issueDay > calendar.startOfDay(for: dateEnd) {
+            errorL.text = NSLocalizedString("Register Error ARC Issue After Expire", comment: "")
+            errorView.isHidden = false
+            return false
+        }
+        
+        return true
     }
     
     public func setArcCodeString(Code code:String) {

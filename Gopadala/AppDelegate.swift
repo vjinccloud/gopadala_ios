@@ -108,6 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WKNavigationDelegate, WKU
     
     var hasPurpose = false
     var purposeObj:[TransferPurposeObj] = []
+    var fraudMessageStr = ""   //防詐提醒文字（API_FraudMessage）
     var hasRelation = false
     var relationObj:[TransferPurposeObj] = []
     var branchAreaObj:[BranchAreaObj] = []
