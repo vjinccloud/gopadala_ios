@@ -9,6 +9,10 @@
 
 分支 `feature/compliance-202610` 已開好，直接在上面 commit。不 push、不合 main。**commit 訊息用中文，不可出現 Claude、AI、Co-Authored-By 等署名。**
 
+## 第五輪：UI 對齊設計稿（2026-10-20）
+
+簡報前三頁附的畫面是設計稿，第一輪沒照做。規格 `../docs/spec/三國合規更新.md` 的「需求 5」列了 GoPadala 要改的：5-1、5-2。設計稿圖檔在 `../docs/design/compliance-202610/`，用它並排比對，做到肉眼看不出差異為止。功能邏輯不動。做完更新 handoff（加「第五輪」段落，每個改動畫面附「設計稿 vs 實作」截圖），回 CTO 訊息「GoPadala 第五輪已交付」。
+
 ## 專案結構
 
 - 開 `Gopadala.xcworkspace`，scheme 名稱是 **`indogo`**（fork 時沒改名，不要去改它）。CocoaPods 的 `Pods/` 已進版控，**不要跑 `pod install`**。
