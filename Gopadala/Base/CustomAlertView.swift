@@ -141,9 +141,23 @@ class CustomAlertView: UIView {
         labelContentL.text = content
         labelContentL.numberOfLines = 0
         labelContentL.sizeToFit()
-        labelContentL.frame = CGRect.init(x: contentDivX, y: startY, width: width-2*contentDivX, height: labelContentL.frame.size.height)
-        centerView.addSubview(labelContentL)
-        startY += labelContentL.frame.size.height
+        let contentHeight = labelContentL.frame.size.height
+        //內文最高佔螢幕 50%，超過就放進可捲動的區域，讓按鈕一定留在視窗內；短文字時外觀和原本一樣
+        let maxContentHeight:CGFloat = (self.frame.size.height * 0.5).rounded()
+        if contentHeight > maxContentHeight {
+            let contentScroll = UIScrollView.init(frame: CGRect.init(x: contentDivX, y: startY, width: width-2*contentDivX, height: maxContentHeight))
+            contentScroll.showsVerticalScrollIndicator = true
+            contentScroll.alwaysBounceVertical = true
+            contentScroll.contentSize = CGSize(width: width-2*contentDivX, height: contentHeight)
+            labelContentL.frame = CGRect.init(x: 0, y: 0, width: width-2*contentDivX, height: contentHeight)
+            contentScroll.addSubview(labelContentL)
+            centerView.addSubview(contentScroll)
+            startY += maxContentHeight
+        } else {
+            labelContentL.frame = CGRect.init(x: contentDivX, y: startY, width: width-2*contentDivX, height: contentHeight)
+            centerView.addSubview(labelContentL)
+            startY += contentHeight
+        }
 
         //按鈕：深藍膠囊、白字粗體、寬約視窗 64%、置中
         startY += 14
