@@ -8,7 +8,7 @@
 "Register Signature Required" = "Silakan tanda tangan terlebih dahulu.";
 
 /* compliance-202610 需求1：ARC 發證日期 */
-"ARC ISSUE DATE" = "ARC Issue Date";
+"ARC ISSUE DATE" = "ARC ISSUE DATE";
 "Register Error ARC Issue Empty" = "Silakan pilih tanggal terbit ARC";
 "Register Error ARC Issue Future" = "Tanggal terbit ARC tidak boleh melebihi hari ini";
 "Register Error ARC Issue After Expire" = "Tanggal terbit ARC tidak boleh melebihi tanggal kedaluwarsa";

@@ -84,7 +84,7 @@ final class FraudMessageGate: NSObject, CustomAlertDelegate {
         }
         let customAlert = CustomAlertView.init(frame: window.bounds)
         customAlert.tapOutsideToClose = false
-        customAlert.initSimpleAlert(Title: NSLocalizedString("Fraud Alert Title", comment: ""), Content: msg, NextBtn1Str: NSLocalizedString("Fraud Alert Confirm", comment: ""))
+        customAlert.initFraudAlert(Title: NSLocalizedString("Fraud Alert Title", comment: ""), Content: msg, NextBtn1Str: NSLocalizedString("Fraud Alert Confirm", comment: ""))
         customAlert.customDelegate = self
         window.addSubview(customAlert)
     }

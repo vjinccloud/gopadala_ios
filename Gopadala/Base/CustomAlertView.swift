@@ -84,6 +84,103 @@ class CustomAlertView: UIView {
         
     }
     
+    /// 防詐提醒視窗（compliance-202610 需求 5-2，對齊設計稿 fraud-gopadala.png）
+    /// 版型：藍色漸層色帶白字粗體標題 → 人形警告圖示 fraud_alert_icon → 內文置中 → 深藍窄版膠囊按鈕置中。視窗寬約螢幕 80%。
+    /// 只管外觀，按鈕與點外面的行為沿用 nextAction / cancelAction。
+    public func initFraudAlert(Title title:String, Content content:String, NextBtn1Str btnStr1:String) {
+        self.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+        let dialogWidth:CGFloat = (self.frame.size.width * 0.8).rounded()
+        let centerY:CGFloat = self.frame.size.height/2
+        let darkBlue = UtilityTool().hexStringToUIColor(hex: "#1F2E5C")
+
+        let closeBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
+        self.addSubview(closeBtn)
+        closeBtn.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
+
+        //背景框
+        let centerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: dialogWidth, height: 0))
+        self.addSubview(centerView)
+        centerView.backgroundColor = .white
+        let width = centerView.frame.size.width
+        var startY:CGFloat = 0
+
+        //標題列：藍色漸層、白字粗體置中
+        let barHeight:CGFloat = 42
+        let barView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: width, height: barHeight))
+        barView.backgroundColor = Color_Main_Red
+        barView.addGradienOfIndoGo()
+        centerView.addSubview(barView)
+
+        let labelTitleL = UILabel.init(frame: barView.bounds)
+        labelTitleL.textAlignment = .center
+        labelTitleL.textColor = .white
+        labelTitleL.font = UIFont.boldSystemFont(ofSize: 20)
+        labelTitleL.text = title
+        labelTitleL.adjustsFontSizeToFitWidth = true
+        labelTitleL.minimumScaleFactor = 0.7
+        barView.addSubview(labelTitleL)
+
+        startY += barHeight
+
+        //圖示：紫色人形加警告三角（佔位圖從設計稿裁切，之後換 Assets 內的檔即可）
+        startY += 12
+        let iconSize:CGFloat = 48
+        let icon = UIImageView.init(frame: CGRect.init(x: (width-iconSize)/2, y: startY, width: iconSize, height: iconSize))
+        icon.contentMode = .scaleAspectFit
+        icon.image = UIImage.init(named: "fraud_alert_icon")
+        centerView.addSubview(icon)
+        startY += iconSize
+
+        //內文：置中、深藍字、左右留白
+        startY += 8
+        let contentDivX:CGFloat = 14
+        let labelContentL = UILabel.init(frame: CGRect.init(x: contentDivX, y: startY, width: width-2*contentDivX, height: 0))
+        labelContentL.textColor = darkBlue
+        labelContentL.font = UIFont.systemFont(ofSize: 13.5)
+        labelContentL.textAlignment = .center
+        labelContentL.text = content
+        labelContentL.numberOfLines = 0
+        labelContentL.sizeToFit()
+        let contentHeight = labelContentL.frame.size.height
+        //內文最高佔螢幕 50%，超過就放進可捲動的區域，讓按鈕一定留在視窗內；短文字時外觀和原本一樣
+        let maxContentHeight:CGFloat = (self.frame.size.height * 0.5).rounded()
+        if contentHeight > maxContentHeight {
+            let contentScroll = UIScrollView.init(frame: CGRect.init(x: contentDivX, y: startY, width: width-2*contentDivX, height: maxContentHeight))
+            contentScroll.showsVerticalScrollIndicator = true
+            contentScroll.alwaysBounceVertical = true
+            contentScroll.contentSize = CGSize(width: width-2*contentDivX, height: contentHeight)
+            labelContentL.frame = CGRect.init(x: 0, y: 0, width: width-2*contentDivX, height: contentHeight)
+            contentScroll.addSubview(labelContentL)
+            centerView.addSubview(contentScroll)
+            startY += maxContentHeight
+        } else {
+            labelContentL.frame = CGRect.init(x: contentDivX, y: startY, width: width-2*contentDivX, height: contentHeight)
+            centerView.addSubview(labelContentL)
+            startY += contentHeight
+        }
+
+        //按鈕：深藍膠囊、白字粗體、寬約視窗 64%、置中
+        startY += 14
+        let btnHeight:CGFloat = 30
+        let btnWidth:CGFloat = (width * 0.64).rounded()
+        let nextBtn = UIButton.init(frame: CGRect.init(x: (width-btnWidth)/2, y: startY, width: btnWidth, height: btnHeight))
+        nextBtn.setTitle(btnStr1, for: .normal)
+        nextBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        nextBtn.titleLabel?.adjustsFontSizeToFitWidth = true
+        nextBtn.backgroundColor = darkBlue
+        nextBtn.setTitleColor(.white, for: .normal)
+        nextBtn.layer.cornerRadius = btnHeight/2
+        centerView.addSubview(nextBtn)
+        nextBtn.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
+        startY += btnHeight + 20
+
+        //最後位置調整
+        centerView.frame = CGRect.init(x: 0, y: 0, width: dialogWidth, height: startY)
+        centerView.center = CGPoint(x: self.frame.size.width/2, y: centerY)
+        centerView.layer.cornerRadius = 12
+        centerView.clipsToBounds = true
+    }
+
     public func initAlert(Title title:String, Content content:String, NextBtn1Str btnStr1:String, CancelBtn1Str btnStr2:String) {
         self.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)
         let divX:CGFloat = 50
